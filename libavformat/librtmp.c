@@ -342,7 +342,7 @@ static const AVClass lib ## flavor ## _class = {\
 };
 
 RTMP_CLASS(rtmp)
-const URLProtocol ff_librtmp_protocol = {
+URLProtocol ff_librtmp_protocol = {
     .name                = "rtmp",
     .url_open            = rtmp_open,
     .url_read            = rtmp_read,
@@ -357,7 +357,7 @@ const URLProtocol ff_librtmp_protocol = {
 };
 
 RTMP_CLASS(rtmpt)
-const URLProtocol ff_librtmpt_protocol = {
+URLProtocol ff_librtmpt_protocol = {
     .name                = "rtmpt",
     .url_open            = rtmp_open,
     .url_read            = rtmp_read,
@@ -372,7 +372,7 @@ const URLProtocol ff_librtmpt_protocol = {
 };
 
 RTMP_CLASS(rtmpe)
-const URLProtocol ff_librtmpe_protocol = {
+URLProtocol ff_librtmpe_protocol = {
     .name                = "rtmpe",
     .url_open            = rtmp_open,
     .url_read            = rtmp_read,
@@ -387,7 +387,7 @@ const URLProtocol ff_librtmpe_protocol = {
 };
 
 RTMP_CLASS(rtmpte)
-const URLProtocol ff_librtmpte_protocol = {
+URLProtocol ff_librtmpte_protocol = {
     .name                = "rtmpte",
     .url_open            = rtmp_open,
     .url_read            = rtmp_read,
@@ -402,7 +402,7 @@ const URLProtocol ff_librtmpte_protocol = {
 };
 
 RTMP_CLASS(rtmps)
-const URLProtocol ff_librtmps_protocol = {
+URLProtocol ff_librtmps_protocol = {
     .name                = "rtmps",
     .url_open            = rtmp_open,
     .url_read            = rtmp_read,

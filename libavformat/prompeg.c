@@ -297,11 +297,11 @@ static int prompeg_open(URLContext *h, const char *uri, int flags) {
 
     ff_url_join(buf, sizeof (buf), "udp", NULL, hostname, rtp_port + 2, NULL);
     if (ffurl_open_whitelist(&s->fec_col_hd, buf, flags, &h->interrupt_callback,
-            &udp_opts, h->protocol_whitelist, h->protocol_blacklist, h) < 0)
+            &udp_opts, h->protocol_whitelist, h) < 0)
         goto fail;
     ff_url_join(buf, sizeof (buf), "udp", NULL, hostname, rtp_port + 4, NULL);
     if (ffurl_open_whitelist(&s->fec_row_hd, buf, flags, &h->interrupt_callback,
-            &udp_opts, h->protocol_whitelist, h->protocol_blacklist, h) < 0)
+            &udp_opts, h->protocol_whitelist, h) < 0)
         goto fail;
 
     h->max_packet_size = s->fec_col_hd->max_packet_size;
@@ -470,7 +470,7 @@ static int prompeg_close(URLContext *h) {
     return 0;
 }
 
-const URLProtocol ff_prompeg_protocol = {
+URLProtocol ff_prompeg_protocol = {
     .name                      = "prompeg",
     .url_open                  = prompeg_open,
     .url_write                 = prompeg_write,

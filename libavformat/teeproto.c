@@ -113,7 +113,7 @@ static int tee_open(URLContext *h, const char *filename, int flags)
 
         ret = ffurl_open_whitelist(&c->child[c->child_count].url_context, child_name, flags,
                                    &h->interrupt_callback, &options,
-                                   h->protocol_whitelist, h->protocol_blacklist,
+                                   h->protocol_whitelist, 
                                    h);
 loop_fail:
         av_freep(&child_string);
@@ -136,7 +136,7 @@ fail:
     tee_close(h);
     return ret;
 }
-const URLProtocol ff_tee_protocol = {
+URLProtocol ff_tee_protocol = {
     .name                = "tee",
     .url_open            = tee_open,
     .url_write           = tee_write,
